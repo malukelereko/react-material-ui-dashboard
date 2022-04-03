@@ -61,7 +61,7 @@ const Dashboard = () => {
                 label: "Revenue Sources",
                 backgroundColor: ["#0288d1", "#8888d1", "#ff88d1"],
                 borderColor: ["#0288d1", "#8888d1", "#ff88d1"],
-                data: [1000, 2000, 1500]
+                data: [2500, 2000, 1500]
             }
         ]
     }
