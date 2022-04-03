@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Paper, Typography, Button, Box, Grid } from '@mui/material'
 import { Select, FormControl, MenuItem, InputLabel } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import LineChart from '../components/charts/LineChart';
 
 const StatCard = ({ title, value, percentage, period }) => {
 
@@ -37,7 +38,19 @@ const Dashboard = () => {
 
     const handleChange = (event) => {
         setPeriod(event.target.value);
-      };
+    };
+
+    const revenueData = {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ],
+        datasets: [
+            {
+                label: "Revenue",
+                backgroundColor: "#0288d1",
+                borderColor: "#0288d1",
+                data: [1000, 2000, 4000, 3000, 6000, 5000, 8000, 7000, 10000, 9000, 12000, 11000]
+            }
+        ]
+    } 
     return (
         <div>
             {/* Heading */}
@@ -86,6 +99,12 @@ const Dashboard = () => {
 
                 <Grid item lg={3} md={6} sm={12}>
                     <StatCard title={"Convertion Rate"} value={"55%"} percentage={"+11.97%"} period={period}/>
+                </Grid>
+            </Grid>
+
+            <Grid container spacing={2}>
+                <Grid item md={12} lg={6}>
+                    <LineChart graphData={revenueData}></LineChart>
                 </Grid>
             </Grid>
         </div>
