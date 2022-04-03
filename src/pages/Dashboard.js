@@ -3,6 +3,7 @@ import { Paper, Typography, Button, Box, Grid } from '@mui/material'
 import { Select, FormControl, MenuItem, InputLabel } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import LineChart from '../components/charts/LineChart';
+import { Card, CardHeader, CardContent, CardActions } from '@mui/material';
 
 const StatCard = ({ title, value, percentage, period }) => {
 
@@ -104,7 +105,19 @@ const Dashboard = () => {
 
             <Grid container spacing={2}>
                 <Grid item md={12} lg={6}>
-                    <LineChart graphData={revenueData}></LineChart>
+                    <Card>
+                        <CardHeader
+                            title="Revenue"
+                            subheader={"Shows revenue for the " + period}
+                            sx={{ bgcolor: '#f5f5f5' }}
+                        ></CardHeader>
+
+                        <CardContent>
+                            <LineChart graphData={revenueData}></LineChart>
+                        </CardContent>
+                        
+                    </Card>
+                    
                 </Grid>
             </Grid>
         </div>
