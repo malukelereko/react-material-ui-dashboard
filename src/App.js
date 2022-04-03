@@ -1,7 +1,9 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Box, CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+import Sidebar from './components/sidebar/Sidebar';
 
 function App() {
 
@@ -13,10 +15,14 @@ const theme = createTheme();
       <Box sx={{ display: 'flex' }}>
 
         <CssBaseline />
+        
         <Router>
-          <Routes>
-            <Route path='/' element={<h1>Hello world</h1>}></Route>
-          </Routes>
+          <Sidebar></Sidebar> 
+          <Box component="main" sx={{ flexGrow: 1, p: 3, mt: 6 }}>
+            <Routes>
+                <Route path='/' element={<h1>Hello world</h1>}></Route>
+            </Routes>
+          </Box>
         </Router>
       </Box>
     </ThemeProvider>
