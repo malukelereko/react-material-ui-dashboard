@@ -3,6 +3,7 @@ import { Paper, Typography, Button, Box, Grid } from '@mui/material'
 import { Select, FormControl, MenuItem, InputLabel } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import LineChart from '../components/charts/LineChart';
+import PieholeChart from '../components/charts/PieholeChart';
 import { Card, CardHeader, CardContent, CardActions } from '@mui/material';
 
 const StatCard = ({ title, value, percentage, period }) => {
@@ -48,10 +49,22 @@ const Dashboard = () => {
                 label: "Revenue",
                 backgroundColor: "#0288d1",
                 borderColor: "#0288d1",
-                data: [1000, 2000, 4000, 3000, 6000, 5000, 8000, 7000, 10000, 9000, 12000, 11000]
+                data: [1000, 2000, 4000, 3000, 6000, 5000, 8000, 7000, 10000, 9000, 11500, 11000]
             }
         ]
-    } 
+    }
+    
+    const sourcesData = {
+        labels: ['Direct', 'Social', 'Referral'],
+        datasets: [
+            {
+                label: "Revenue Sources",
+                backgroundColor: ["#0288d1", "#8888d1", "#ff88d1"],
+                borderColor: ["#0288d1", "#8888d1", "#ff88d1"],
+                data: [1000, 2000, 1500]
+            }
+        ]
+    }
     return (
         <div>
             {/* Heading */}
@@ -104,7 +117,7 @@ const Dashboard = () => {
             </Grid>
 
             <Grid container spacing={2}>
-                <Grid item md={12} lg={6}>
+                <Grid item md={12} lg={7}>
                     <Card>
                         <CardHeader
                             title="Revenue"
@@ -114,6 +127,22 @@ const Dashboard = () => {
 
                         <CardContent>
                             <LineChart graphData={revenueData}></LineChart>
+                        </CardContent>
+                        
+                    </Card>
+                    
+                </Grid>
+
+                <Grid item md={12} lg={5}>
+                    <Card>
+                        <CardHeader
+                            title="Revenue Sources"
+                            subheader={"Shows sources for the " + period}
+                            sx={{ bgcolor: '#f5f5f5' }}
+                        ></CardHeader>
+
+                        <CardContent>
+                            <PieholeChart graphData={sourcesData}></PieholeChart>
                         </CardContent>
                         
                     </Card>
