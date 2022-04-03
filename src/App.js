@@ -4,6 +4,7 @@ import { Box, CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import Sidebar from './components/sidebar/Sidebar';
+import Dashboard from './pages/Dashboard';
 
 function App() {
 
@@ -20,7 +21,7 @@ const theme = createTheme();
           <Sidebar></Sidebar> 
           <Box component="main" sx={{ flexGrow: 1, p: 3, mt: 6 }}>
             <Routes>
-                <Route path='/' element={<h1>Hello world</h1>}></Route>
+                <Route path='/' element={<Dashboard/>}></Route>
             </Routes>
           </Box>
         </Router>

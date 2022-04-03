@@ -201,7 +201,7 @@ const Navbar = ({open, setOpen}) => {
                         component="div"
                         sx={{ display: { xs: 'none', sm: 'block' } }}
                     >
-                        C-Pay Dashboard
+                        Maluke
                     </Typography>
                     
                     <Search>
