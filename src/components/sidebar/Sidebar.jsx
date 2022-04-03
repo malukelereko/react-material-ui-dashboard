@@ -27,10 +27,16 @@ import FactoryIcon from '@mui/icons-material/Factory';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 import LogoutIcon from '@mui/icons-material/Logout';
+import GridViewIcon from '@mui/icons-material/GridView';
+import AppsIcon from '@mui/icons-material/Apps';
+import ViewCompactIcon from '@mui/icons-material/ViewCompact';
+import AccountTreeIcon from '@mui/icons-material/AccountTree';
 
 // Componets
 import Navbar from "../navbar/Navbar";
 
+// CSS
+import './Sidebar.css';
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -58,6 +64,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',
+    backgroundColor: '#0288d1',
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
@@ -113,9 +120,12 @@ const SidebarItem = ({link, icon, text}) => {
     return (
       <NavLink to={link}>
         <ListItemButton>
-          <ListItemIcon>
-            {icon}
-          </ListItemIcon>
+            { icon &&
+                <ListItemIcon>
+                    {icon}
+                </ListItemIcon>
+            }
+          
           <ListItemText primary={text}></ListItemText>
         </ListItemButton>
       </NavLink>
@@ -149,7 +159,7 @@ const Sidebar = () => {
                 <List
                     subheader={
                         <ListSubheader component="div" id="nested-list-subheader">
-                          Core
+                          CORE
                         </ListSubheader>
                       }
                 >
@@ -168,39 +178,34 @@ const Sidebar = () => {
                 <List
                     subheader={
                         <ListSubheader component="div" id="nested-list-subheader">
-                          Performance
+                          CUSTOM
                         </ListSubheader>
                     }
                 >
-                  <DropdownItem icon={<GroupIcon />} text="Users">
-                    <SidebarItem link="/daily" icon={<GroupAddIcon />} text="Registered"></SidebarItem>
-                    <SidebarItem link="/weekly" icon={<PeopleOutlineIcon />} text="Active"></SidebarItem>
-                    <SidebarItem link="/monthly" icon={<StorefrontIcon />} text="Agents & Merc"></SidebarItem>
+                  <DropdownItem icon={<GridViewIcon />} text="Pages">
+                    <SidebarItem link="/daily"  text="Account"></SidebarItem>
+                    <SidebarItem link="/weekly" text="Authentication"></SidebarItem>
+                    <SidebarItem link="/monthly" text="Error"></SidebarItem>
                   </DropdownItem>
 
-                  <DropdownItem icon={<AccountBalanceIcon />} text="Transactions">
-                    <SidebarItem link="/daily" icon={<SpeedIcon />} text="Velocity & Dem."></SidebarItem>
-                    <SidebarItem link="/weekly" icon={<MonetizationOnIcon />} text="Pricing"></SidebarItem>
-                    <SidebarItem link="/monthly" icon={<PieChartIcon />} text="Market Share"></SidebarItem>
-                    <SidebarItem link="/monthly" icon={<FactoryIcon />} text="Ind. Averages"></SidebarItem>
+                  <DropdownItem icon={<AppsIcon />} text="Applications">
+                    <SidebarItem link="/daily" text="Knowledge Base"></SidebarItem>
+                    <SidebarItem link="/weekly" text="User Management"></SidebarItem>
+                    <SidebarItem link="/monthly" text="Posts Management"></SidebarItem>
                   </DropdownItem>
-
-                  <SidebarItem link="/" icon={<CurrencyExchangeIcon />} text="Revenue & ARPU"></SidebarItem>
-
-                  <SidebarItem link="/" icon={<TrendingUpIcon />} text="Cohort Analysis"></SidebarItem>
-                  
                 </List>
 
                 <Divider />
                 <List
                     subheader={
                         <ListSubheader component="div" id="nested-list-subheader">
-                          Account
+                          UI TOOLKIT
                         </ListSubheader>
                     }
                 >
-                  <SidebarItem link="/" icon={<LogoutIcon />} text="Logout"></SidebarItem>
-                  
+                    <SidebarItem link="/" icon={<ViewCompactIcon />} text="Layout"></SidebarItem>
+
+                    <SidebarItem link="/" icon={<AccountTreeIcon />} text="Components"></SidebarItem>                  
                 </List>
             </Drawer>
         </div>
