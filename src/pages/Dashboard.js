@@ -36,7 +36,7 @@ const StatCard = ({ title, value, percentage, period }) => {
 
 const Dashboard = () => {
 
-    const [period, setPeriod] = useState('')
+    const [period, setPeriod] = useState('Last Week')
 
     const handleChange = (event) => {
         setPeriod(event.target.value);
