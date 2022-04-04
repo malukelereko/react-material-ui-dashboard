@@ -19,6 +19,7 @@ import GridViewIcon from '@mui/icons-material/GridView';
 import AppsIcon from '@mui/icons-material/Apps';
 import ViewCompactIcon from '@mui/icons-material/ViewCompact';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 // Componets
 import Navbar from "../navbar/Navbar";
@@ -152,12 +153,12 @@ const Sidebar = () => {
                       }
                 >
 
-                  <SidebarItem link="/daily" icon={<AnalyticsIcon />} text="Dashboard"></SidebarItem>
+                  <SidebarItem link="/" icon={<AnalyticsIcon />} text="Dashboard"></SidebarItem>
                   
                   <DropdownItem icon={<CalendarMonthIcon />} text="Reports">
-                    <SidebarItem link="/daily" icon={<TodayIcon />} text="Daily"></SidebarItem>
-                    <SidebarItem link="/weekly" icon={<CalendarViewWeekIcon />} text="Weekly"></SidebarItem>
-                    <SidebarItem link="/monthly" icon={<CalendarViewMonthIcon />} text="Monthly"></SidebarItem>
+                    <SidebarItem link="/" icon={<TodayIcon />} text="Daily"></SidebarItem>
+                    <SidebarItem link="/" icon={<CalendarViewWeekIcon />} text="Weekly"></SidebarItem>
+                    <SidebarItem link="/" icon={<CalendarViewMonthIcon />} text="Monthly"></SidebarItem>
                   </DropdownItem>
                   
                 </List>
@@ -171,15 +172,15 @@ const Sidebar = () => {
                     }
                 >
                   <DropdownItem icon={<GridViewIcon />} text="Pages">
-                    <SidebarItem link="/daily"  text="Account"></SidebarItem>
-                    <SidebarItem link="/weekly" text="Authentication"></SidebarItem>
-                    <SidebarItem link="/monthly" text="Error"></SidebarItem>
+                    <SidebarItem link="/"  text="Account"></SidebarItem>
+                    <SidebarItem link="/" text="Authentication"></SidebarItem>
+                    <SidebarItem link="/error" text="Error"></SidebarItem>
                   </DropdownItem>
 
                   <DropdownItem icon={<AppsIcon />} text="Applications">
-                    <SidebarItem link="/daily" text="Knowledge Base"></SidebarItem>
-                    <SidebarItem link="/weekly" text="User Management"></SidebarItem>
-                    <SidebarItem link="/monthly" text="Posts Management"></SidebarItem>
+                    <SidebarItem link="/" text="Knowledge Base"></SidebarItem>
+                    <SidebarItem link="/" text="User Management"></SidebarItem>
+                    <SidebarItem link="/" text="Posts Management"></SidebarItem>
                   </DropdownItem>
                 </List>
 
@@ -194,6 +195,24 @@ const Sidebar = () => {
                     <SidebarItem link="/" icon={<ViewCompactIcon />} text="Layout"></SidebarItem>
 
                     <SidebarItem link="/" icon={<AccountTreeIcon />} text="Components"></SidebarItem>                  
+                </List>
+
+                <List
+                    subheader={
+                        <ListSubheader component="div" id="nested-list-subheader">
+                          CODE
+                        </ListSubheader>
+                    }
+                >
+                    <a href={"https://github.com/malukelereko/react-material-ui-dashboard"}>
+                      <ListItemButton>
+                            <ListItemIcon>
+                              <GitHubIcon />  
+                            </ListItemIcon>
+                        
+                        <ListItemText primary="GitHub"></ListItemText>
+                      </ListItemButton>
+                    </a>                
                 </List>
             </Drawer>
         </div>

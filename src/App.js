@@ -5,6 +5,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import Sidebar from './components/sidebar/Sidebar';
 import Dashboard from './pages/Dashboard';
+import Error_404, { error_404 } from './pages/error/404'
 
 function App() {
 
@@ -22,6 +23,7 @@ const theme = createTheme();
           <Box component="main" sx={{ flexGrow: 1, p: 3, mt: 6 }}>
             <Routes>
                 <Route path='/' element={<Dashboard/>}></Route>
+                <Route path='/error' element={<Error_404/>}></Route>
             </Routes>
           </Box>
         </Router>
