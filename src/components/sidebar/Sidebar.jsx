@@ -155,12 +155,12 @@ const Sidebar = () => {
                 >
 
                   <SidebarItem link="/" icon={<AnalyticsIcon />} text="Dashboard"></SidebarItem>
-                  
+                  {/*                   
                   <DropdownItem icon={<CalendarMonthIcon />} text="Reports">
                     <SidebarItem link="/" icon={<TodayIcon />} text="Daily"></SidebarItem>
                     <SidebarItem link="/" icon={<CalendarViewWeekIcon />} text="Weekly"></SidebarItem>
                     <SidebarItem link="/" icon={<CalendarViewMonthIcon />} text="Monthly"></SidebarItem>
-                  </DropdownItem>
+                  </DropdownItem> */}
                   
                 </List>
                 
@@ -173,7 +173,7 @@ const Sidebar = () => {
                     }
                 >
                   <DropdownItem icon={<GridViewIcon />} text="Pages">
-                    <SidebarItem link="/"  text="Account"></SidebarItem>
+                    <SidebarItem link="/profile"  text="Account"></SidebarItem>
                     <DropdownItem link="/" text="Authentication">
                       <SidebarItem link="/signin"  text="Sign In"></SidebarItem>
                       <SidebarItem link="/signup"  text="Sign Up"></SidebarItem>

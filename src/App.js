@@ -1,13 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Box, CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import Sidebar from './components/sidebar/Sidebar';
 import Dashboard from './pages/Dashboard';
 import Error404 from './pages/error/404'
-import SignUp from './pages/account/SignUp'
-import SignIn from './pages/account/SignIn';
+import SignUp from './pages/authentication/SignUp'
+import SignIn from './pages/authentication/SignIn';
+import Profile from './pages/account/Profile';
 import DefaultLayout from './layout/DefaultLayout';
 
 function App() {
@@ -33,6 +32,14 @@ const theme = createTheme();
                 </Route>
                 <Route path='/signin' element={<SignIn/>}></Route>
                 <Route path='/signup' element={<SignUp/>}></Route>
+                
+                <Route path='/profile' 
+                  element={
+                    <DefaultLayout>
+                      <Profile/>
+                    </DefaultLayout>
+                  }
+                ></Route>
                 <Route path='/error' 
                   element={
                     <DefaultLayout>
