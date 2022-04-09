@@ -5,7 +5,7 @@ import { blue } from '@mui/material/colors'
 import { ReactComponent as Image } from '../../assets/error_404.svg'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-const Error_404 = () => {
+const Error404 = () => {
   return (
     <Box 
         sx={{ 
@@ -36,4 +36,4 @@ const Error_404 = () => {
   )
 }
 
-export default Error_404
+export default Error404

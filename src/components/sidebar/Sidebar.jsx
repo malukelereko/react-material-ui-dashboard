@@ -87,9 +87,10 @@ const DropdownItem = (props) => {
       return (
         <div>
             <ListItemButton onClick={handleOpen}>
-                <ListItemIcon>
+                { props.icon && 
+                  <ListItemIcon>
                     {props.icon}
-                </ListItemIcon>
+                  </ListItemIcon>}
                 <ListItemText primary={props.text} />
                 {open ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
@@ -173,7 +174,10 @@ const Sidebar = () => {
                 >
                   <DropdownItem icon={<GridViewIcon />} text="Pages">
                     <SidebarItem link="/"  text="Account"></SidebarItem>
-                    <SidebarItem link="/" text="Authentication"></SidebarItem>
+                    <DropdownItem link="/" text="Authentication">
+                      <SidebarItem link="/signin"  text="Sign In"></SidebarItem>
+                      <SidebarItem link="/signup"  text="Sign Up"></SidebarItem>
+                    </DropdownItem>
                     <SidebarItem link="/error" text="Error"></SidebarItem>
                   </DropdownItem>
 
